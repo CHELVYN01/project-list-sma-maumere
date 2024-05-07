@@ -1,0 +1,127 @@
+Tentu! Index.html Anda terdiri dari beberapa elemen utama:
+
+1. **Header**:
+   - Terdiri dari elemen `<head>` yang berisi meta-informasi tentang halaman dan referensi ke file eksternal seperti CSS dan JavaScript.
+   - Pada bagian ini, terdapat elemen `<title>` yang menentukan judul halaman, dan `<link>` yang menghubungkan ke file stylesheet `style.css`.
+
+2. **Body**:
+   - Terdiri dari elemen `<body>` yang menampilkan isi halaman.
+   - Terdapat elemen `<nav>` yang berisi judul "Desain Web". Ini mungkin berfungsi sebagai navigasi utama atau header halaman.
+   - Elemen `.card-container` adalah wadah untuk kartu-kartu yang menampilkan informasi tentang berbagai sekolah menengah atas (SMA) di Maumere.
+   - Setiap kartu terdiri dari elemen `<div>` dengan kelas `.card1` atau `.card2`. Kartu ini mungkin digunakan untuk menampilkan informasi secara terpisah.
+   - Dalam `.card1`, terdapat daftar nama SMA dengan menggunakan elemen `<ul>` dan `<li>`. Setiap nama SMA dibuat dengan elemen `<a>` yang menghubungkan ke halaman lain atau mungkin berfungsi dengan JavaScript.
+   - Dalam `.card2`, terdapat deskripsi-detail tentang setiap SMA. Deskripsi tersebut diatur dengan elemen `<p>` dengan id yang sesuai dengan masing-masing SMA, yang nantinya dapat diakses melalui penggunaan JavaScript.
+   - Deskripsi SMA ditampilkan atau disembunyikan dengan properti CSS `display: none` sesuai dengan id SMA yang dipilih atau status defaultnya.
+
+3. **Script**:
+   - Terdapat referensi ke file JavaScript `script.js`, yang mungkin digunakan untuk mengatur perilaku interaktif halaman, seperti menampilkan atau menyembunyikan deskripsi SMA berdasarkan pilihan pengguna.
+
+Ini adalah struktur dasar dari halaman web Anda. Dengan menggunakan CSS dan JavaScript yang sesuai, Anda dapat meningkatkan interaktivitas dan tata letak halaman sesuai kebutuhan.
+
+
+penjelasan lebih lanjut : 
+
+<nav>: Ini adalah elemen yang menandakan bagian navigasi dari halaman web. Meskipun umumnya digunakan untuk menu navigasi, penggunaan ini tidak eksklusif; itu bisa digunakan untuk setiap bagian navigasi yang terkait dengan halaman.
+<h1>: Ini adalah elemen heading level 1 yang menandakan judul utama dari halaman web. Dalam konteks ini, judul "Desain Web" kemungkinan besar berfungsi sebagai pengenalan atau identifikasi utama untuk halaman web Anda.
+<div class="card-container">: Ini adalah sebuah div yang berfungsi sebagai wadah untuk mengelompokkan atau menampung kartu-kartu yang akan ditampilkan. Nama kelas card-container mungkin menandakan bahwa elemen ini didesain untuk menampung kartu-kartu atau konten serupa.
+<div class="card1" id="card1">: Ini adalah sebuah div yang mungkin digunakan sebagai kartu pertama (atau kartu utama) dalam tata letak halaman Anda. Dengan kelas card1, Anda bisa merancang tampilannya secara spesifik melalui CSS atau menghubungkannya dengan perilaku tertentu menggunakan JavaScript. Id card1 dapat digunakan untuk referensi unik dari elemen ini, misalnya untuk memanipulasi atau mengatur perilaku kartu ini secara dinamis.
+<p>Daftar nama SMA :</p>: Ini adalah sebuah paragraf yang mungkin berfungsi sebagai judul atau deskripsi singkat dari konten yang akan ditampilkan di dalam kartu. Di sini, judulnya menunjukkan bahwa konten di dalam kartu akan berisi daftar nama SMA.
+<ul> dan <li>: Ini adalah elemen untuk membuat daftar tidak bernomor (unordered list) dan item-item di dalamnya. Di sini, digunakan untuk membuat daftar nama-nama SMA. Setiap nama SMA ditampilkan sebagai tautan (link) dengan kelas SMA-link dan atribut data-SMA yang mungkin digunakan untuk tujuan tertentu, seperti identifikasi atau pengolahan data lebih lanjut melalui JavaScript.
+Ini adalah CSS yang digunakan untuk mengatur tata letak dan gaya tampilan elemen-elemen di halaman web Anda:
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav {
+  background-color: hsl(185, 65%, 53%);
+  color: white;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.card-container {
+  display: flex;
+}
+
+.card1 {
+  padding: 20px;
+  background-color: rgb(215, 217, 216);
+  width: 30%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.card-container ul {
+  text-decoration: none;
+  list-style: decimal;
+  padding-top: 10px;
+}
+
+.card-container ul li a {
+  text-decoration: none;
+  color: black;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.card-container ul li a:hover {
+  color: hsl(0, 0%, 43%);
+}
+
+.card1 p {
+  font-weight: bold;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.card2 {
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  width: 70%;
+}
+
+#default-description {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: large;
+}
+```
+
+Penjelasan singkat:
+
+- `*`: Ini adalah selektor universal yang mengatur semua elemen dalam halaman.
+- `.nav`: Mengatur tampilan navigasi dengan latar belakang warna hsl(185, 65%, 53%) dan teks berwarna putih.
+- `.card-container`: Mengatur tampilan container untuk kartu-kartu, dengan tata letak display flex.
+- `.card1`: Mengatur tampilan kartu pertama dengan warna latar belakang rgb(215, 217, 216) dan lebar 30% dari lebar tampilan.
+- `.card-container ul`: Mengatur tampilan daftar nama SMA dalam kartu pertama dengan gaya penomoran desimal dan padding atas 10px.
+- `.card-container ul li a`: Mengatur tampilan tautan nama SMA dengan teks berwarna hitam dan menggunakan beberapa jenis font.
+- `:hover`: Mengatur tampilan tautan saat digulirkan dengan warna hsl(0, 0%, 43%).
+- `.card1 p`: Mengatur tampilan paragraf dalam kartu pertama dengan teks tebal dan jenis font tertentu.
+- `.card2`: Mengatur tampilan kartu kedua dengan warna latar belakang putih dan lebar 70% dari lebar tampilan.
+- `#default-description`: Mengatur tampilan deskripsi default dengan jenis font tertentu dan ukuran font besar.
+Skrip JavaScript di atas menangani perilaku interaktif dari tautan-tautan di halaman Anda. Berikut adalah penjelasan singkatnya:
+
+1. `document.addEventListener("DOMContentLoaded", function () { ... });`: Ini adalah event listener yang dipanggil ketika DOM telah selesai dimuat. Ini memastikan bahwa semua elemen di halaman telah tersedia sebelum JavaScript dijalankan.
+
+2. `var tokoLinks = document.querySelectorAll(".SMA-link");`: Ini mencari semua tautan dengan kelas `.SMA-link` dan menyimpannya dalam variabel `tokoLinks`.
+
+3. `tokoLinks.forEach(function (link) { ... });`: Ini mengulangi setiap tautan dan menambahkan event listener 'click' untuk setiap tautan.
+
+4. `link.addEventListener("click", function (event) { ... });`: Ini menambahkan event listener yang akan memicu fungsi ketika tautan di-klik.
+
+5. `event.preventDefault();`: Ini mencegah perilaku default dari tautan, yaitu mengarahkan pengguna ke halaman baru.
+
+6. `var tokoId = this.getAttribute("data-SMA");`: Ini mengambil nilai dari atribut `data-SMA` dari tautan yang diklik, yang berisi ID toko yang berkorespondensi dengan deskripsi yang akan ditampilkan.
+
+7. `var deskripsiTokos = document.querySelectorAll(".deskripsi-SMA");`: Ini mencari semua elemen dengan kelas `.deskripsi-SMA`, yang mewakili deskripsi untuk setiap toko.
+
+8. `deskripsiTokos.forEach(function (deskripsi) { ... });`: Ini mengulangi setiap deskripsi dan memeriksa apakah ID deskripsi cocok dengan ID toko yang diklik. Jika cocok, deskripsi tersebut ditampilkan (display: block), dan jika tidak, deskripsi tersebut disembunyikan (display: none).
+
+9. `var defaultDeskripsi = document.getElementById("default-description");`: Ini mencari elemen dengan ID `default-description`, yang mewakili deskripsi default yang akan ditampilkan jika tidak ada tautan yang diklik.
+
+10. `defaultDeskripsi.style.display = "block";`: Jika ditemukan, deskripsi default ditampilkan (display: block) secara default.
+
+Dengan skrip ini, Anda mengatur perilaku interaktif di mana deskripsi SMA akan muncul saat tautan SMA diklik, dan deskripsi default akan ditampilkan jika tidak ada yang diklik.
